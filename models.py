@@ -3,9 +3,9 @@ from typing import Optional
 from datetime import datetime
 
 class Media(BaseModel):
-    id: int
+    id: Optional[int] = None  # Will be auto-generated
     title: str
-    type: str              # "book", "movie", "tv", "podcast", "game"
+    type: str               # "book", "movie", "tv", "podcast", "game"
     genre: str
     rating: float
     created_at: Optional[datetime] = datetime.now()
