@@ -2,7 +2,8 @@ import pandas as pd
 from models import Media
 from pathlib import Path
 
-DATA_FILE = Path("database.csv")
+DATA_FILE = os.path.join(os.path.dirname(__file__), "data", "media.csv")
+media_df = pd.read_csv(DATA_FILE)
 
 def load_data():
     if not DATA_FILE.exists():
