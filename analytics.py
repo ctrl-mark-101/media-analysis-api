@@ -1,5 +1,13 @@
 import pandas as pd
 from crud import load_data
+import os
+
+DATA_FILE = os.path.join(os.path.dirname(__file__), "data", "media.csv")
+
+def load_media():
+    """Load the unified media CSV into a DataFrame."""
+    return pd.read_csv(DATA_FILE)
+
 
 def average_rating(media_type: str = None):
     df = load_data()
