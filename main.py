@@ -4,6 +4,10 @@ import crud, analytics
 
 app = FastAPI()
 
+@app.get("/")
+def root():
+    return {"message": "Welcome to the Media Consumption Analysis API!"}
+
 @app.post("/media")
 def add_media(media: Media):
     return crud.add_media(media)
