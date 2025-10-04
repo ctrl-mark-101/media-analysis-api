@@ -36,3 +36,7 @@ def trend():
 @app.get("/analytics/highest-rated")
 def top_rated():
     return analytics.highest_rated()
+
+@app.get("/analytics/filter")
+def filter_media(media_type: str = None, platform: str = None):
+    return analytics.filter_media(media_type, platform)
